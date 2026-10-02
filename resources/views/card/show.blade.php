@@ -936,7 +936,12 @@
             const cvv = document.getElementById('flowpay-card-cvv');
 
             if (number && card.number) {
-                number.textContent = card.number;
+                const digits = card.number.replace(/\D/g, '');
+                const lastFour = digits.slice(-4);
+
+                if (lastFour.length === 4) {
+                    number.textContent = `•••• •••• •••• ${lastFour}`;
+                }
             }
 
             if (expiry && card.expiry) {
