@@ -1,0 +1,193 @@
+<x-app-layout>
+    <div class="min-h-screen bg-slate-50">
+        <div class="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+
+            {{-- Retour --}}
+            <div class="mb-5">
+                <a
+                    href="{{ route('dashboard') }}"
+                    class="inline-flex items-center gap-2 rounded-xl px-2 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
+                >
+                    <svg
+                        class="h-5 w-5 shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 19l-7-7 7-7"
+                        />
+                    </svg>
+
+                    Retour
+                </a>
+            </div>
+
+            {{-- En-tête --}}
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                    Ma carte
+                </h1>
+
+                <p class="mt-2 text-sm text-slate-500">
+                    Gérez votre carte virtuelle FlowPay.
+                </p>
+            </div>
+
+            <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+
+            {{-- Carte virtuelle --}}
+            <section class="bg-white p-6 shadow-sm">
+
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-xs font-medium uppercase tracking-wider text-slate-400">
+                            Votre carte
+                        </p>
+
+                        <h2 class="mt-1 text-lg font-semibold text-slate-900">
+                            Carte virtuelle
+                        </h2>
+                    </div>
+
+                    <span class="border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
+                        Active
+                    </span>
+                </div>
+
+                {{-- Même carte que l'accueil --}}
+                <div class="mt-5 overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 p-5 text-white shadow-md">
+                    <div class="flex items-start justify-between">
+                        <span class="text-sm font-semibold tracking-wide">
+                            FlowPay
+                        </span>
+
+                        <span class="text-xs text-white/70">
+                            VIRTUELLE
+                        </span>
+                    </div>
+
+                    <div class="mt-8 text-lg tracking-[0.2em]">
+                        •••• •••• •••• 4821
+                    </div>
+
+                    <div class="mt-5 flex justify-between text-xs">
+                        <div>
+                            <p class="text-white/60">
+                                TITULAIRE
+                            </p>
+
+                            <p class="mt-1 font-medium uppercase">
+                                {{ Auth::user()->name }}
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-white/60">
+                                EXPIRATION
+                            </p>
+
+                            <p class="mt-1 font-medium">
+                                12/29
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-white/60">
+                                CVV
+                            </p>
+
+                            <p id="card-cvv" class="mt-1 font-medium tracking-wider">
+                                •••
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            {{-- Gestion --}}
+            <section class="mt-6 overflow-hidden border border-slate-200 bg-white shadow-sm">
+
+                <div class="border-b border-slate-100 px-6 py-5">
+                    <h2 class="text-base font-semibold text-slate-900">
+                        Gestion de la carte
+                    </h2>
+
+                    <p class="mt-1 text-xs text-slate-500">
+                        Les actions sensibles nécessiteront une vérification de sécurité.
+                    </p>
+                </div>
+
+                <div class="divide-y divide-slate-100">
+
+                    <button
+                        type="button"
+                        class="flex w-full items-center justify-between px-6 py-5 text-left transition hover:bg-slate-50"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div class="flex h-10 w-10 items-center justify-center bg-blue-50 text-blue-600">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                          d="M12 15a3 3 0 100-6 3 3 0 000 6z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                          d="M19.4 15a1.7 1.7 0 00.34 1.88l.06.06-1.5 1.5-.06-.06a1.7 1.7 0 00-1.88-.34 1.7 1.7 0 00-1.03 1.56V20h-2.12v-.4a1.7 1.7 0 00-1.03-1.56 1.7 1.7 0 00-1.88.34l-.06.06-1.5-1.5.06-.06A1.7 1.7 0 008.2 15a1.7 1.7 0 00-1.56-1.03H6V11.8h.64A1.7 1.7 0 008.2 10a1.7 1.7 0 00-.34-1.88L7.8 8.06l1.5-1.5.06.06A1.7 1.7 0 0011.24 7a1.7 1.7 0 001.03-1.56V5h2.12v.4A1.7 1.7 0 0015.42 7a1.7 1.7 0 001.88-.34l.06-.06 1.5 1.5-.06.06A1.7 1.7 0 0018.46 10a1.7 1.7 0 001.56 1.03h.4v2.12h-.4A1.7 1.7 0 0019.4 15z"/>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">
+                                    Paramètres de la carte
+                                </p>
+
+                                <p class="mt-1 text-xs text-slate-500">
+                                    Gérez les options de votre carte
+                                </p>
+                            </div>
+                        </div>
+
+                        <span class="text-slate-400">›</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="flex w-full items-center justify-between px-6 py-5 text-left transition hover:bg-slate-50"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div class="flex h-10 w-10 items-center justify-center bg-amber-50 text-amber-600">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                          d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                          d="M12 8v4"/>
+                                    <circle cx="12" cy="15.5" r=".7" fill="currentColor"/>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">
+                                    Bloquer la carte
+                                </p>
+
+                                <p class="mt-1 text-xs text-slate-500">
+                                    Désactiver temporairement les paiements
+                                </p>
+                            </div>
+                        </div>
+
+                        <span class="text-slate-400">›</span>
+                    </button>
+
+                </div>
+            </section>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</x-app-layout>

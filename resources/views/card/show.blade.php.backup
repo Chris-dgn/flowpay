@@ -1,0 +1,172 @@
+<x-app-layout>
+    <div class="min-h-screen bg-slate-50">
+        <div class="mx-auto w-full max-w-3xl px-4 py-6 sm:px-6 lg:px-8">
+
+            {{-- En-tête --}}
+            <div class="mb-7">
+
+                <h1 class="mt-1 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                    Ma carte
+                </h1>
+
+                <p class="mt-2 text-sm text-slate-500">
+                    Gérez votre carte virtuelle FlowPay.
+                </p>
+            </div>
+
+            {{-- Carte virtuelle --}}
+            <div class="relative mb-6 overflow-hidden rounded-3xl bg-slate-950 p-6 text-white shadow-xl sm:p-8">
+                <div class="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-blue-600/20 blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-20 h-48 w-48 rounded-full bg-indigo-500/10 blur-3xl"></div>
+
+                <div class="relative">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <p class="text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
+                                Carte virtuelle
+                            </p>
+
+                            <p class="mt-2 text-lg font-bold tracking-tight">
+                                FlowPay
+                            </p>
+                        </div>
+
+                        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
+                            <span class="text-sm font-bold">FP</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-12">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg tracking-[0.25em] text-slate-300">
+                                •••• •••• •••• 4821
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex items-end justify-between">
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest text-slate-500">
+                                Titulaire
+                            </p>
+
+                            <p class="mt-1 text-sm font-semibold uppercase">
+                                {{ auth()->user()->name }}
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest text-slate-500">
+                                Expire
+                            </p>
+
+                            <p class="mt-1 text-sm font-semibold">
+                                ••/••
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Statut --}}
+            <div class="mb-5 flex items-center justify-between rounded-2xl border border-emerald-100 bg-emerald-50 px-5 py-4">
+                <div class="flex items-center gap-3">
+                    <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-100">
+                        <span class="h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+                    </span>
+
+                    <div>
+                        <p class="text-sm font-semibold text-emerald-900">
+                            Carte active
+                        </p>
+
+                        <p class="text-xs text-emerald-700">
+                            Votre carte est disponible pour vos paiements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Actions --}}
+            <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+
+                <div class="border-b border-slate-100 px-6 py-5">
+                    <h2 class="text-base font-semibold text-slate-900">
+                        Gestion de la carte
+                    </h2>
+
+                    <p class="mt-1 text-xs text-slate-500">
+                        Les actions sensibles nécessiteront une vérification de sécurité.
+                    </p>
+                </div>
+
+                <div class="divide-y divide-slate-100">
+
+                    <button
+                        type="button"
+                        class="flex w-full items-center justify-between px-6 py-5 text-left transition hover:bg-slate-50"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                          d="M12 15a3 3 0 100-6 3 3 0 000 6z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                          d="M19.4 15a1.7 1.7 0 00.34 1.88l.06.06-1.5 1.5-.06-.06a1.7 1.7 0 00-1.88-.34 1.7 1.7 0 00-1.03 1.56V20h-2.12v-.4a1.7 1.7 0 00-1.03-1.56 1.7 1.7 0 00-1.88.34l-.06.06-1.5-1.5.06-.06A1.7 1.7 0 008.2 15a1.7 1.7 0 00-1.56-1.03H6V11.8h.64A1.7 1.7 0 008.2 10a1.7 1.7 0 00-.34-1.88L7.8 8.06l1.5-1.5.06.06A1.7 1.7 0 0011.24 7a1.7 1.7 0 001.03-1.56V5h2.12v.4A1.7 1.7 0 0015.42 7a1.7 1.7 0 001.88-.34l.06-.06 1.5 1.5-.06.06A1.7 1.7 0 0018.46 10a1.7 1.7 0 001.56 1.03h.4v2.12h-.4A1.7 1.7 0 0019.4 15z"/>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">
+                                    Paramètres de la carte
+                                </p>
+
+                                <p class="mt-1 text-xs text-slate-500">
+                                    Gérez les options de votre carte
+                                </p>
+                            </div>
+                        </div>
+
+                        <span class="text-slate-400">›</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="flex w-full items-center justify-between px-6 py-5 text-left transition hover:bg-slate-50"
+                    >
+                        <div class="flex items-center gap-4">
+                            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                          d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                          d="M12 8v4"/>
+                                    <circle cx="12" cy="15.5" r=".7" fill="currentColor"/>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <p class="text-sm font-semibold text-slate-900">
+                                    Bloquer la carte
+                                </p>
+
+                                <p class="mt-1 text-xs text-slate-500">
+                                    Désactiver temporairement les paiements
+                                </p>
+                            </div>
+                        </div>
+
+                        <span class="text-slate-400">›</span>
+                    </button>
+
+                </div>
+            </div>
+
+            <p class="mt-5 text-center text-xs leading-5 text-slate-400">
+                Les informations affichées ici sont actuellement en mode démonstration.
+                Aucune donnée bancaire réelle n'est stockée.
+            </p>
+
+        </div>
+    </div>
+</x-app-layout>
