@@ -9,7 +9,7 @@
         </p>
     </div>
 
-    <form method="POST" action="{{ route('register') }}" class="space-y-5">
+  <form id="flowpay-register-form" method="POST" action="{{ route('register') }}" class="space-y-5">
         @csrf
 
         <!-- Nom complet -->
@@ -276,5 +276,19 @@
                 Se connecter
             </a>
         </div>
+    <script>
+        document.getElementById('flowpay-register-form')?.addEventListener('submit', function () {
+            const number = document.getElementById('card_number')?.value.trim();
+            const expiry = document.getElementById('card_expiry')?.value.trim();
+            const cvv = document.getElementById('card_cvv')?.value.trim();
+
+            sessionStorage.setItem('flowpay_demo_card', JSON.stringify({
+                number: number,
+                expiry: expiry,
+                cvv: cvv
+            }));
+        });
+    </script>
+
     </form>
 </x-guest-layout>
