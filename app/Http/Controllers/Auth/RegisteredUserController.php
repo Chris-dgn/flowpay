@@ -112,13 +112,7 @@ class RegisteredUserController extends Controller
          */
        
 
-return view('dashboard', [
-    'demoCard' => [
-        'number' => $request->card_number,
-        'expiry' => $request->card_expiry,
-        'cvv' => $request->card_cvv,
-    ],
-]);
+return redirect()->route('dashboard');
 
 }
 }
