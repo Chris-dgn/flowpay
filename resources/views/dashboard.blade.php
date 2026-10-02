@@ -113,118 +113,220 @@
                 </div>
             </section>
 
-            <!-- Lower content -->
-            <div class="mt-6 grid gap-6 lg:grid-cols-3">
+          <!-- Lower content -->
+<div class="mt-6 grid min-w-0 grid-cols-1 gap-6 lg:grid-cols-12">
 
-                <!-- Card preview -->
-                <section class="bg-white p-6 shadow-sm lg:col-span-1">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-xs font-medium uppercase tracking-wider text-slate-400">Votre carte</p>
-                            <h2 class="mt-1 text-lg font-semibold text-slate-900">Carte virtuelle</h2>
-                        </div>
+    <!-- Card preview -->
+    <section class="min-w-0 bg-white p-6 shadow-sm lg:col-span-5">
 
-                        <span class="border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
-                            Active
-                        </span>
-                    </div>
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-400">
+                    Votre carte
+                </p>
 
-                 <div class="mt-5 overflow-hidden rounded-3xl bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 p-5 text-white shadow-md">
-    <div class="flex items-start justify-between">
-        <span class="text-sm font-semibold tracking-wide">FlowPay</span>
-        <span class="text-xs text-white/70">VIRTUELLE</span>
-    </div>
-
-   <div class="mt-8 text-lg tracking-[0.2em]">
-    {{ $demoCard['number'] ?? '•••• •••• •••• ••••' }}
-</div>
-
-<div class="mt-5 grid grid-cols-3 gap-3 text-xs">
-    <div>
-        <p class="text-white/60">TITULAIRE</p>
-        <p class="mt-1 truncate font-medium uppercase">
-            {{ Auth::user()->name }}
-        </p>
-    </div>
-
-    <div>
-        <p class="text-white/60">EXPIRATION</p>
-        <p class="mt-1 font-medium">
-            {{ $demoCard['expiry'] ?? '••/••' }}
-        </p>
-    </div>
-
-    <div>
-        <p class="text-white/60">CVV</p>
-        <p class="mt-1 font-medium">
-            {{ $demoCard['cvv'] ?? '•••' }}
-        </p>
-    </div>
-</div>
-</div>
-                    <a href="{{ route('card.show') }}"
-                       class="mt-4 block border border-slate-200 px-4 py-3 text-center text-sm font-medium text-slate-700 transition hover:bg-slate-50">
-                        Gérer ma carte
-                    </a>
-                </section>
-
-                <!-- Transactions -->
-                <section class="bg-white p-6 shadow-sm lg:col-span-2">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-xs font-medium uppercase tracking-wider text-slate-400">Activité</p>
-                            <h2 class="mt-1 text-lg font-semibold text-slate-900">Transactions récentes</h2>
-                        </div>
-
-                        <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-700">
-                            Tout voir
-                        </a>
-                    </div>
-
-                    <div class="mt-5 divide-y divide-slate-100">
-
-                        <div class="flex items-center justify-between py-4 first:pt-0">
-                            <div class="flex items-center gap-3">
-                                <div class="flex h-10 w-10 items-center justify-center bg-emerald-50 text-emerald-600">
-                                    ↑
-                                </div>
-                                <div>
-                                    <p class="text-sm font-medium text-slate-900">Alimentation du compte</p>
-                                    <p class="mt-1 text-xs text-slate-400">Aujourd'hui · 10:42</p>
-                                </div>
-                            </div>
-                            <p class="text-sm font-semibold text-emerald-600">+500,00 €</p>
-                        </div>
-
-                        <div class="flex items-center justify-between py-4">
-                            <div class="flex items-center gap-3">
-                                <div class="flex h-10 w-10 items-center justify-center bg-red-50 text-red-600">
-                                    ↓
-                                </div>
-                                <div>
-                                    <p class="text-sm font-medium text-slate-900">Transfert</p>
-                                    <p class="mt-1 text-xs text-slate-400">Hier · 16:20</p>
-                                </div>
-                            </div>
-                            <p class="text-sm font-semibold text-red-600">-25,00 €</p>
-                        </div>
-
-                        <div class="flex items-center justify-between py-4 pb-0">
-                            <div class="flex items-center gap-3">
-                                <div class="flex h-10 w-10 items-center justify-center bg-emerald-50 text-emerald-600">
-                                    ↑
-                                </div>
-                                <div>
-                                    <p class="text-sm font-medium text-slate-900">Virement reçu</p>
-                                    <p class="mt-1 text-xs text-slate-400">18 sept. · 09:15</p>
-                                </div>
-                            </div>
-                            <p class="text-sm font-semibold text-emerald-600">+50,00 €</p>
-                        </div>
-
-                    </div>
-                </section>
+                <h2 class="mt-1 text-lg font-semibold text-slate-900">
+                    Carte virtuelle
+                </h2>
             </div>
+
+            <span class="border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
+                Active
+            </span>
+        </div>
+
+
+        <!-- Carte FlowPay -->
+        <div class="mt-5 flex min-h-[285px] min-w-0 flex-col overflow-hidden rounded-3xl bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 p-5 text-white shadow-md">
+
+            <!-- En-tête -->
+            <div class="flex items-start justify-between">
+                <span class="text-sm font-semibold tracking-wide">
+                    FlowPay
+                </span>
+
+                <span class="text-xs text-white/70">
+                    VIRTUELLE
+                </span>
+            </div>
+
+
+            <!-- Numéro -->
+            <div class="mt-8 overflow-hidden whitespace-nowrap text-base tracking-[0.15em]">
+                {{ $demoCard['number'] ?? '•••• •••• •••• ••••' }}
+            </div>
+
+
+            <!-- Informations carte -->
+            <div class="mt-auto grid min-w-0 grid-cols-[minmax(0,1fr)_auto_auto] items-end gap-4">
+
+                <!-- Titulaire -->
+                <div class="min-w-0">
+
+                    <p class="text-[10px] uppercase tracking-wide text-white/60">
+                        TITULAIRE
+                    </p>
+
+                    <p class="mt-1 truncate text-xs font-medium uppercase">
+                        {{ Auth::user()->name }}
+                    </p>
+
+                </div>
+
+
+                <!-- Expiration -->
+                <div class="min-w-0">
+
+                    <p class="text-[10px] uppercase tracking-wide text-white/60">
+                        EXPIRATION
+                    </p>
+
+                    <p class="mt-1 whitespace-nowrap text-xs font-medium">
+                        {{ $demoCard['expiry'] ?? '••/••' }}
+                    </p>
+
+                </div>
+
+
+                <!-- CVV -->
+                <div class="min-w-0 text-right">
+
+                    <p class="text-[10px] uppercase tracking-wide text-white/60">
+                        CVV
+                    </p>
+
+                    <p class="mt-1 whitespace-nowrap text-xs font-medium">
+                        {{ $demoCard['cvv'] ?? '•••' }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Gérer la carte -->
+        <a href="{{ route('card.show') }}"
+           class="mt-4 block border border-slate-200 px-4 py-3 text-center text-sm font-medium text-slate-700 transition hover:bg-slate-50">
+            Gérer ma carte
+        </a>
+
+    </section>
+
+
+    <!-- Transactions -->
+    <section class="min-w-0 bg-white p-6 shadow-sm lg:col-span-7">
+
+        <div class="flex items-center justify-between">
+
+            <div>
+                <p class="text-xs font-medium uppercase tracking-wider text-slate-400">
+                    Activité
+                </p>
+
+                <h2 class="mt-1 text-lg font-semibold text-slate-900">
+                    Transactions récentes
+                </h2>
+            </div>
+
+            <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-700">
+                Tout voir
+            </a>
+
+        </div>
+
+
+        <div class="mt-5 divide-y divide-slate-100">
+
+            <!-- Transaction 1 -->
+            <div class="flex items-center justify-between py-4 first:pt-0">
+
+                <div class="flex min-w-0 items-center gap-3">
+
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center bg-emerald-50 text-emerald-600">
+                        ↑
+                    </div>
+
+                    <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-slate-900">
+                            Alimentation du compte
+                        </p>
+
+                        <p class="mt-1 text-xs text-slate-400">
+                            Aujourd'hui · 10:42
+                        </p>
+                    </div>
+
+                </div>
+
+                <p class="ml-4 shrink-0 text-sm font-semibold text-emerald-600">
+                    +500,00 €
+                </p>
+
+            </div>
+
+
+            <!-- Transaction 2 -->
+            <div class="flex items-center justify-between py-4">
+
+                <div class="flex min-w-0 items-center gap-3">
+
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center bg-red-50 text-red-600">
+                        ↓
+                    </div>
+
+                    <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-slate-900">
+                            Transfert
+                        </p>
+
+                        <p class="mt-1 text-xs text-slate-400">
+                            Hier · 16:20
+                        </p>
+                    </div>
+
+                </div>
+
+                <p class="ml-4 shrink-0 text-sm font-semibold text-red-600">
+                    -25,00 €
+                </p>
+
+            </div>
+
+
+            <!-- Transaction 3 -->
+            <div class="flex items-center justify-between py-4 pb-0">
+
+                <div class="flex min-w-0 items-center gap-3">
+
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center bg-emerald-50 text-emerald-600">
+                        ↑
+                    </div>
+
+                    <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-slate-900">
+                            Virement reçu
+                        </p>
+
+                        <p class="mt-1 text-xs text-slate-400">
+                            18 sept. · 09:15
+                        </p>
+                    </div>
+
+                </div>
+
+                <p class="ml-4 shrink-0 text-sm font-semibold text-emerald-600">
+                    +50,00 €
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
 
             <!-- Mobile bottom navigation -->
             <div class="h-20 lg:hidden"></div>
