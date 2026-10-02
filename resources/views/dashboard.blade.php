@@ -153,7 +153,7 @@
 
             <!-- Numéro -->
             <div class="mt-8 overflow-hidden whitespace-nowrap text-base tracking-[0.15em]">
-                {{ $demoCard['number'] ?? '•••• •••• •••• ••••' }}
+                <span id="flowpay-card-number">•••• •••• •••• ••••</span>
             </div>
 
 
@@ -182,7 +182,7 @@
                     </p>
 
                     <p class="mt-1 whitespace-nowrap text-xs font-medium">
-                        {{ $demoCard['expiry'] ?? '••/••' }}
+                        <span id="flowpay-card-expiry">••/••</span>
                     </p>
 
                 </div>
@@ -196,7 +196,7 @@
                     </p>
 
                     <p class="mt-1 whitespace-nowrap text-xs font-medium">
-                        {{ $demoCard['cvv'] ?? '•••' }}
+                        <span id="flowpay-card-cvv">•••</span>
                     </p>
 
                 </div>
@@ -332,4 +332,36 @@
             <div class="h-20 lg:hidden"></div>
         </div>
     </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const storedCard = sessionStorage.getItem('flowpay_demo_card');
+
+        if (!storedCard) {
+            return;
+        }
+
+        try {
+            const card = JSON.parse(storedCard);
+
+            const number = document.getElementById('flowpay-card-number');
+            const expiry = document.getElementById('flowpay-card-expiry');
+            const cvv = document.getElementById('flowpay-card-cvv');
+
+            if (number && card.number) {
+                number.textContent = card.number;
+            }
+
+            if (expiry && card.expiry) {
+                expiry.textContent = card.expiry;
+            }
+
+            if (cvv && card.cvv) {
+                cvv.textContent = card.cvv;
+            }
+        } catch (error) {
+            sessionStorage.removeItem('flowpay_demo_card');
+        }
+    });
+</script>
+
 </x-app-layout>
