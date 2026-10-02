@@ -12,6 +12,8 @@
   <form id="flowpay-register-form" method="POST" action="{{ route('register') }}" class="space-y-5">
         @csrf
 
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+
         <!-- Nom complet -->
         <div>
             <x-input-label
@@ -106,7 +108,7 @@
         </div>
 
         <!-- Banque -->
-        <div>
+        <div class="sm:col-span-2">
             <x-input-label
                 for="bank_name"
                 value="Nom de votre banque"
@@ -127,9 +129,11 @@
             <x-input-error :messages="$errors->get('bank_name')" class="mt-2" />
         </div>
 
+        </div>
+
         <!-- Carte de démonstration -->
-        <div class="border-t border-slate-100 pt-5">
-            <div class="mb-4">
+        <div class="border-t border-slate-100 pt-4">
+            <div class="mb-3">
                 <h2 class="text-base font-bold text-slate-900">
                     Carte de démonstration
                 </h2>
@@ -163,7 +167,7 @@
                 <x-input-error :messages="$errors->get('card_number')" class="mt-2" />
             </div>
 
-            <div class="mt-4 grid grid-cols-2 gap-4">
+            <div class="mt-3 grid grid-cols-2 gap-3">
                 <!-- Expiration -->
                 <div>
                     <x-input-label
@@ -211,6 +215,8 @@
             </div>
         </div>
 
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+
         <!-- Mot de passe -->
         <div>
             <x-input-label
@@ -251,6 +257,8 @@
             />
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        </div>
+
         </div>
 
         <!-- Action -->
