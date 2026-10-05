@@ -89,20 +89,25 @@
                 class="text-sm font-semibold text-slate-700"
             />
 
-            <select
-                id="language"
-                name="language"
-                required
-                class="mt-2 block w-full rounded-lg border-slate-200 bg-slate-50 px-4 py-3 text-slate-700 focus:border-blue-500 focus:bg-white focus:ring-blue-500"
-            >
-                <option value="">Sélectionnez votre langue</option>
-                <option value="fr" @selected(old('language') === 'fr')>
-                    Français
-                </option>
-                <option value="en" @selected(old('language') === 'en')>
-                    English
-                </option>
-            </select>
+           <select
+    id="language"
+    name="language"
+    required
+    class="mt-2 block w-full rounded-lg border-slate-200 bg-slate-50 px-4 py-3 text-slate-700"
+>
+    <option value="">Sélectionnez votre langue</option>
+
+    <option value="fr">Français</option>
+    <option value="en">English</option>
+    <option value="es">Español</option>
+    <option value="pt">Português</option>
+    <option value="de">Deutsch</option>
+    <option value="it">Italiano</option>
+    <option value="nl">Nederlands</option>
+    <option value="tr">Türkçe</option>
+    <option value="zh">中文</option>
+    <option value="ja">日本語</option>
+</select>
 
             <x-input-error :messages="$errors->get('language')" class="mt-2" />
         </div>

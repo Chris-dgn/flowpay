@@ -1,3 +1,4 @@
+
 <x-app-layout>
 
     <div class="min-h-[calc(100vh-65px)] bg-slate-50">
@@ -5,13 +6,12 @@
 
             <!-- En-tête -->
             <div class="mb-8">
-
                 <h1 class="mt-1 text-2xl font-semibold tracking-tight text-slate-900">
-                    Mon compte
+                    {{ __('messages.account_page_title') }}
                 </h1>
 
                 <p class="mt-2 text-sm text-slate-500">
-                    Consultez et gérez vos informations personnelles et la sécurité de votre compte.
+                    {{ __('messages.account_page_description') }}
                 </p>
             </div>
 
@@ -44,15 +44,15 @@
                                 {{ $user->name }}
                             </h2>
 
-                         
-
                             <div class="mt-2 flex items-center gap-2">
                                 <span class="h-2 w-2 bg-emerald-500"></span>
+
                                 <span class="text-xs font-medium text-emerald-700">
-                                    Compte actif
+                                    {{ __('messages.account_active') }}
                                 </span>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -61,19 +61,20 @@
 
                     <div class="mb-5">
                         <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                            Informations personnelles
+                            {{ __('messages.personal_information') }}
                         </p>
 
                         <h2 class="mt-1 text-lg font-semibold text-slate-900">
-                            Vos informations
+                            {{ __('messages.your_information') }}
                         </h2>
                     </div>
 
                     <div class="grid gap-4 sm:grid-cols-2">
 
+                        <!-- Nom -->
                         <div class="border border-slate-200 px-4 py-4">
                             <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
-                                Nom complet
+                                {{ __('messages.full_name') }}
                             </p>
 
                             <p class="mt-2 text-sm font-medium text-slate-900">
@@ -81,9 +82,10 @@
                             </p>
                         </div>
 
+                        <!-- Email -->
                         <div class="border border-slate-200 px-4 py-4">
                             <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
-                                Adresse email
+                                {{ __('messages.email_address') }}
                             </p>
 
                             <p class="mt-2 break-all text-sm font-medium text-slate-900">
@@ -91,16 +93,21 @@
                             </p>
                         </div>
 
+                        <!-- Statut -->
                         <div class="border border-slate-200 px-4 py-4">
                             <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
-                                Statut
+                                {{ __('messages.status') }}
                             </p>
 
-                        
+                            <p class="mt-2 text-sm font-medium text-emerald-600">
+                                {{ __('messages.active') }}
+                            </p>
+                        </div>
 
+                        <!-- Membre depuis -->
                         <div class="border border-slate-200 px-4 py-4">
                             <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
-                                Membre depuis
+                                {{ __('messages.member_since') }}
                             </p>
 
                             <p class="mt-2 text-sm font-medium text-slate-900">
@@ -110,23 +117,26 @@
 
                     </div>
                 </div>
+
             </section>
 
             <!-- Sécurité -->
             <section class="mt-6 border border-slate-200 bg-white shadow-sm">
 
                 <div class="border-b border-slate-100 px-6 py-6 sm:px-8">
+
                     <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                        Sécurité
+                        {{ __('messages.security') }}
                     </p>
 
                     <h2 class="mt-1 text-lg font-semibold text-slate-900">
-                        Protéger votre compte
+                        {{ __('messages.protect_account') }}
                     </h2>
 
                     <p class="mt-2 text-sm text-slate-500">
-                        Utilisez un mot de passe fort et différent de vos autres comptes.
+                        {{ __('messages.strong_password_description') }}
                     </p>
+
                 </div>
 
                 <div class="px-6 py-6 sm:px-8">
@@ -139,13 +149,15 @@
             <section class="mt-6 border border-slate-200 bg-white shadow-sm">
 
                 <div class="border-b border-slate-100 px-6 py-6 sm:px-8">
+
                     <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                        Modification
+                        {{ __('messages.modification') }}
                     </p>
 
                     <h2 class="mt-1 text-lg font-semibold text-slate-900">
-                        Modifier mes informations
+                        {{ __('messages.edit_information') }}
                     </h2>
+
                 </div>
 
                 <div class="px-6 py-6 sm:px-8">
@@ -161,11 +173,11 @@
 
                     <div>
                         <p class="text-sm font-semibold text-slate-900">
-                            Terminer votre session
+                            {{ __('messages.end_session') }}
                         </p>
 
                         <p class="mt-1 text-sm text-slate-500">
-                            Déconnectez-vous de FlowPay sur cet appareil.
+                            {{ __('messages.logout_description') }}
                         </p>
                     </div>
 
@@ -176,33 +188,35 @@
                             type="submit"
                             class="border border-red-200 px-5 py-2.5 text-sm font-medium text-red-600 transition duration-200 hover:bg-red-50"
                         >
-                            Se déconnecter
+                            {{ __('messages.logout') }}
                         </button>
                     </form>
 
                 </div>
+
             </section>
 
             <!-- Suppression du compte -->
             <section class="mt-6 border border-red-100 bg-red-50/40 shadow-sm">
 
                 <div class="px-6 py-6 sm:px-8">
+
                     <p class="text-xs font-semibold uppercase tracking-wider text-red-500">
-                        Zone sensible
+                        {{ __('messages.sensitive_area') }}
                     </p>
 
                     <h2 class="mt-1 text-lg font-semibold text-slate-900">
-                        Supprimer mon compte
+                        {{ __('messages.delete_account') }}
                     </h2>
 
                     <p class="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
-                        La suppression du compte est une action définitive.
-                        Votre mot de passe sera demandé avant la suppression.
+                        {{ __('messages.delete_account_description') }}
                     </p>
 
                     <div class="mt-5">
                         @include('profile.partials.delete-user-form')
                     </div>
+
                 </div>
 
             </section>

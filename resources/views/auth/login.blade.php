@@ -1,11 +1,12 @@
+
 <x-guest-layout>
     <div class="mb-8 text-center">
         <h1 class="text-2xl font-bold tracking-tight text-slate-900">
-            Bienvenue sur FlowPay
+            {{ __('messages.welcome_to_flowpay') }}
         </h1>
 
         <p class="mt-2 text-sm text-slate-500">
-            Connectez-vous à votre espace sécurisé
+            {{ __('messages.login_description') }}
         </p>
     </div>
 
@@ -17,7 +18,7 @@
         <div>
             <x-input-label
                 for="email"
-                value="Adresse e-mail"
+                :value="__('messages.email_address')"
                 class="text-sm font-semibold text-slate-700"
             />
 
@@ -30,7 +31,7 @@
                 required
                 autofocus
                 autocomplete="username"
-                placeholder="vous@exemple.com"
+                :placeholder="__('messages.email_placeholder')"
             />
 
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
@@ -40,7 +41,7 @@
             <div class="flex items-center justify-between">
                 <x-input-label
                     for="password"
-                    value="Mot de passe"
+                    :value="__('messages.password')"
                     class="text-sm font-semibold text-slate-700"
                 />
 
@@ -49,7 +50,7 @@
                         href="{{ route('password.request') }}"
                         class="text-xs font-semibold text-blue-600 hover:text-blue-700"
                     >
-                        Mot de passe oublié ?
+                        {{ __('messages.forgot_password') }}
                     </a>
                 @endif
             </div>
@@ -77,7 +78,7 @@
                 >
 
                 <span class="ms-2 text-sm text-slate-500">
-                    Se souvenir de moi
+                    {{ __('messages.remember_me') }}
                 </span>
             </label>
         </div>
@@ -86,7 +87,7 @@
             type="submit"
             class="w-full rounded-lg bg-blue-600 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
-            Se connecter
+            {{ __('messages.login') }}
         </button>
     </form>
 </x-guest-layout>

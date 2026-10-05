@@ -1,3 +1,4 @@
+
 <nav x-data="{ open: false }" class="sticky top-0 z-40 border-b border-slate-200 bg-white">
 
     <!-- ========================================================= -->
@@ -27,7 +28,7 @@
                         href="{{ route('dashboard') }}"
                         class="rounded-lg px-4 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
                     >
-                        Accueil
+                        {{ __('messages.home') }}
                     </a>
 
                     <!-- Ma carte -->
@@ -35,7 +36,7 @@
                         href="{{ route('card.show') }}"
                         class="rounded-lg px-4 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
                     >
-                        Ma carte
+                        {{ __('messages.my_card') }}
                     </a>
 
                     <!-- Transfert -->
@@ -43,7 +44,7 @@
                         href="{{ route('transfers.create') }}"
                         class="rounded-lg px-4 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
                     >
-                        Transfert
+                        {{ __('messages.transfer') }}
                     </a>
 
                     <!-- Ajouter -->
@@ -51,7 +52,7 @@
                         href="{{ route('deposits.create') }}"
                         class="rounded-lg px-4 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
                     >
-                        Ajouter
+                        {{ __('messages.add') }}
                     </a>
 
                 </div>
@@ -60,7 +61,7 @@
                 <a
                     href="{{ route('profile.edit') }}"
                     class="group flex items-center gap-3 rounded-xl px-2 py-1.5 transition hover:bg-slate-50"
-                    aria-label="Mon compte"
+                    aria-label="{{ __('messages.my_account') }}"
                 >
 
                     <!-- Icône profil -->
@@ -95,7 +96,7 @@
                         </p>
 
                         <p class="text-xs text-slate-500">
-                            Mon compte
+                            {{ __('messages.my_account') }}
                         </p>
                     </div>
 
@@ -119,7 +120,7 @@
                 <a
                     href="{{ route('profile.edit') }}"
                     class="group flex items-center"
-                    aria-label="Mon compte"
+                    aria-label="{{ __('messages.my_account') }}"
                 >
 
                     <div class="flex h-10 w-10 items-center justify-center text-slate-700 transition-colors duration-200 group-hover:text-blue-600">
@@ -152,7 +153,7 @@
                         </p>
 
                         <p class="text-xs text-slate-500">
-                            Mon compte
+                            {{ __('messages.my_account') }}
                         </p>
                     </div>
 
@@ -176,7 +177,7 @@
                     @click="open = !open"
                     type="button"
                     class="ml-auto flex h-10 w-10 items-center justify-center text-slate-700 transition-all duration-300 hover:bg-slate-50 hover:text-blue-600"
-                    aria-label="Ouvrir le menu"
+                    aria-label="{{ __('messages.open_menu') }}"
                     :aria-expanded="open"
                 >
 
@@ -239,12 +240,12 @@
                 <div class="mb-4 flex items-center justify-between border-b border-slate-100 pb-4">
                     <div>
                         <h2 class="text-base font-semibold text-slate-900">
-                            Menu principal
+                            {{ __('messages.main_menu') }}
                         </h2>
                     </div>
 
                     <span class="text-xs text-slate-400">
-                        Votre espace
+                        {{ __('messages.your_space') }}
                     </span>
                 </div>
 
@@ -276,11 +277,11 @@
 
                         <span class="flex-1">
                             <span class="block text-sm font-semibold text-slate-900">
-                                Accueil
+                                {{ __('messages.home') }}
                             </span>
 
                             <span class="mt-0.5 block text-xs text-slate-500">
-                                Votre tableau de bord
+                                {{ __('messages.dashboard_description_short') }}
                             </span>
                         </span>
 
@@ -304,11 +305,11 @@
 
                         <span class="flex-1">
                             <span class="block text-sm font-semibold text-slate-900">
-                                Mon solde
+                                {{ __('messages.my_balance') }}
                             </span>
 
                             <span class="mt-0.5 block text-xs text-slate-500">
-                                Consulter votre solde
+                                {{ __('messages.check_balance') }}
                             </span>
                         </span>
 
@@ -349,11 +350,11 @@
 
                         <span class="flex-1">
                             <span class="block text-sm font-semibold text-slate-900">
-                                Ma carte
+                                {{ __('messages.my_card') }}
                             </span>
 
                             <span class="mt-0.5 block text-xs text-slate-500">
-                                Consulter votre carte
+                                {{ __('messages.view_my_card') }}
                             </span>
                         </span>
 
@@ -387,11 +388,11 @@
 
                         <span class="flex-1">
                             <span class="block text-sm font-semibold text-slate-900">
-                                Transfert
+                                {{ __('messages.transfer') }}
                             </span>
 
                             <span class="mt-0.5 block text-xs text-slate-500">
-                                Envoyer de l'argent
+                                {{ __('messages.send_money') }}
                             </span>
                         </span>
 
@@ -425,11 +426,11 @@
 
                         <span class="flex-1">
                             <span class="block text-sm font-semibold text-slate-900">
-                                Ajouter
+                                {{ __('messages.add') }}
                             </span>
 
                             <span class="mt-0.5 block text-xs text-slate-500">
-                                Alimenter votre compte
+                                {{ __('messages.fund_account_short') }}
                             </span>
                         </span>
 
@@ -474,11 +475,11 @@
 
                     <span>
                         <span class="block text-sm font-semibold text-slate-900">
-                            Mon compte
+                            {{ __('messages.my_account') }}
                         </span>
 
                         <span class="mt-0.5 block text-xs text-slate-500">
-                            Informations et sécurité
+                            {{ __('messages.account_security') }}
                         </span>
                     </span>
 
@@ -514,11 +515,11 @@
 
                             <span>
                                 <span class="block text-sm font-semibold text-red-600">
-                                    Se déconnecter
+                                    {{ __('messages.logout') }}
                                 </span>
 
                                 <span class="mt-0.5 block text-xs text-red-400">
-                                    Fermer votre session
+                                    {{ __('messages.close_session') }}
                                 </span>
                             </span>
 
@@ -535,3 +536,4 @@
     </div>
 
 </nav>
+

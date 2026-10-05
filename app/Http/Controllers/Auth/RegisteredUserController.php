@@ -45,11 +45,11 @@ class RegisteredUserController extends Controller
                 'max:30',
             ],
 
-            'language' => [
-                'required',
-                'string',
-                'in:fr,en',
-            ],
+           'language' => [
+    'required',
+    'string',
+    'in:fr,en,es,pt,de,it,nl,tr,zh,ja',
+],
 
             'bank_name' => [
                 'required',
