@@ -225,4 +225,8 @@ return [
 'verify_email_description' => '感谢您的注册！开始使用前，请点击我们刚刚发送给您的链接验证您的电子邮箱地址。如果您没有收到邮件，我们可以再次发送。',
 'verification_link_sent' => '新的验证链接已发送到您注册时提供的电子邮箱地址。',
 'resend_verification_email' => '重新发送验证邮件',
+
+'transfer_received' => '收到转账', 'received' => '已收款', 'transfer_received_description' => '该金额已记入您的账户。您现在可以添加 IBAN，以便向您的银行账户进行转账。',
+
+'manage_operations_simply' => '轻松管理您的交易',
 ];

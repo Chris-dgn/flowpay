@@ -224,4 +224,8 @@ return [
 'verify_email_description' => 'Obrigado por se registar! Antes de começar, verifique o seu endereço de e-mail clicando no link que acabámos de enviar. Se não recebeu o e-mail, teremos todo o gosto em enviar-lhe outro.',
 'verification_link_sent' => 'Foi enviado um novo link de verificação para o endereço de e-mail fornecido durante o registo.',
 'resend_verification_email' => 'Reenviar e-mail de verificação',
+
+'transfer_received' => 'Transferência recebida', 'received' => 'Recebida', 'transfer_received_description' => 'O montante foi creditado na sua conta. Pode agora adicionar o seu IBAN para efetuar uma transferência para a sua conta bancária.',
+
+'manage_operations_simply' => 'Gira as suas operações com toda a simplicidade',
 ];

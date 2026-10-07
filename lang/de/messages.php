@@ -225,4 +225,8 @@ return [
 'verify_email_description' => 'Vielen Dank für Ihre Registrierung! Bevor Sie beginnen, bestätigen Sie bitte Ihre E-Mail-Adresse, indem Sie auf den Link klicken, den wir Ihnen gerade gesendet haben. Falls Sie die E-Mail nicht erhalten haben, senden wir Ihnen gerne eine weitere.',
 'verification_link_sent' => 'Ein neuer Bestätigungslink wurde an die bei der Registrierung angegebene E-Mail-Adresse gesendet.',
 'resend_verification_email' => 'Bestätigungs-E-Mail erneut senden',
+
+'transfer_received' => 'Überweisung erhalten', 'received' => 'Erhalten', 'transfer_received_description' => 'Der Betrag wurde Ihrem Konto gutgeschrieben. Sie können jetzt Ihre IBAN hinzufügen, um eine Überweisung auf Ihr Bankkonto vorzunehmen.',
+
+'manage_operations_simply' => 'Verwalten Sie Ihre Transaktionen ganz einfach',
 ];

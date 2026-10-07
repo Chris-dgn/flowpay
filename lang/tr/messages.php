@@ -224,4 +224,8 @@ return [
 'verify_email_description' => 'Kayıt olduğunuz için teşekkürler! Başlamadan önce, az önce gönderdiğimiz bağlantıya tıklayarak e-posta adresinizi doğrulayın. E-postayı almadıysanız size yeni bir tane gönderebiliriz.',
 'verification_link_sent' => 'Kayıt sırasında verdiğiniz e-posta adresine yeni bir doğrulama bağlantısı gönderildi.',
 'resend_verification_email' => 'Doğrulama e-postasını yeniden gönder',
+
+'transfer_received' => 'Transfer alındı', 'received' => 'Alındı', 'transfer_received_description' => 'Tutar hesabınıza yatırıldı. Artık banka hesabınıza transfer yapmak için IBAN bilginizi ekleyebilirsiniz.',
+
+'manage_operations_simply' => 'İşlemlerinizi kolayca yönetin',
 ];

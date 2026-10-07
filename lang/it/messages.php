@@ -223,4 +223,8 @@ return [
 'verify_email_description' => 'Grazie per esserti registrato! Prima di iniziare, verifica il tuo indirizzo e-mail facendo clic sul link che ti abbiamo appena inviato. Se non hai ricevuto l’e-mail, saremo lieti di inviartene un’altra.',
 'verification_link_sent' => 'Un nuovo link di verifica è stato inviato all’indirizzo e-mail fornito durante la registrazione.',
 'resend_verification_email' => 'Invia nuovamente l’e-mail di verifica',
+
+'transfer_received' => 'Bonifico ricevuto', 'received' => 'Ricevuto', 'transfer_received_description' => 'L’importo è stato accreditato sul tuo conto. Ora puoi aggiungere il tuo IBAN per effettuare un bonifico verso il tuo conto bancario.',
+
+'manage_operations_simply' => 'Gestisci le tue operazioni con semplicità',
 ];

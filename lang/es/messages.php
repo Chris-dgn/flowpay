@@ -226,4 +226,8 @@ return [
 'verify_email_description' => '¡Gracias por registrarse! Antes de comenzar, verifique su dirección de correo electrónico haciendo clic en el enlace que acabamos de enviarle. Si no recibió el correo electrónico, podemos enviarle otro.',
 'verification_link_sent' => 'Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico proporcionada durante el registro.',
 'resend_verification_email' => 'Reenviar correo de verificación',
+
+'transfer_received' => 'Transferencia recibida', 'received' => 'Recibida', 'transfer_received_description' => 'El importe ha sido abonado en su cuenta. Ahora puede añadir su IBAN para realizar una transferencia a su cuenta bancaria.',
+
+'manage_operations_simply' => 'Gestiona tus operaciones de forma sencilla',
 ];

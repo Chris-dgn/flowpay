@@ -223,4 +223,8 @@ return [
 'verify_email_description' => 'Bedankt voor je registratie! Voordat je begint, moet je je e-mailadres verifiëren door op de link te klikken die we zojuist hebben verzonden. Als je de e-mail niet hebt ontvangen, sturen we je graag een nieuwe.',
 'verification_link_sent' => 'Er is een nieuwe verificatielink verzonden naar het e-mailadres dat je tijdens de registratie hebt opgegeven.',
 'resend_verification_email' => 'Verificatie-e-mail opnieuw verzenden',
+
+'transfer_received' => 'Overboeking ontvangen', 'received' => 'Ontvangen', 'transfer_received_description' => 'Het bedrag is op je rekening bijgeschreven. Je kunt nu je IBAN toevoegen om een overboeking naar je bankrekening te doen.',
+
+'manage_operations_simply' => 'Beheer je transacties eenvoudig',
 ];

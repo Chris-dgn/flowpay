@@ -14,25 +14,105 @@
                 </p>
             </div>
 
-            <!-- Notification -->
-            <div class="mb-6 flex items-start gap-4 border border-blue-100 bg-blue-50 px-4 py-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center bg-blue-600 text-white">
-                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M15 17h5l-1.5-1.5A2 2 0 0118 14V11a6 6 0 00-12 0v3a2 2 0 01-.5 1.5L4 17h5m6 0v1a3 3 0 01-6 0v-1m6 0H9"/>
-                    </svg>
-                </div>
 
-                <div>
-                    <p class="text-sm font-semibold text-slate-900">
-                        {{ __('messages.welcome_title') }}
-                    </p>
 
-                    <p class="mt-1 text-sm leading-5 text-slate-600">
-                        {{ __('messages.welcome_description') }}
-                    </p>
+<!-- Notification -->
+<div
+    id="transfer-notification"
+    class="mb-6 rounded-xl border border-slate-200 bg-white shadow-sm"
+>
+    <div class="flex items-start gap-4 px-5 py-4">
+
+        <!-- Icône -->
+        <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+            <svg
+                class="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 19V5m0 0l-5 5m5-5l5 5"
+                />
+            </svg>
+        </div>
+
+        <!-- Contenu -->
+        <div class="min-w-0 flex-1">
+
+            <!-- Ligne supérieure -->
+            <div class="flex items-center justify-between gap-4">
+
+                <p class="text-sm font-semibold text-slate-900">
+                    {{ __('messages.transfer_received') }}
+                </p>
+
+                <!-- Badge + fermeture -->
+                <div class="flex shrink-0 items-center gap-2">
+
+                    <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+                        {{ __('messages.received') }}
+                    </span>
+
+                    <button
+                        type="button"
+                        id="close-transfer-notification"
+                        class="flex h-7 w-7 items-center justify-center rounded-full text-slate-400 transition duration-200 hover:bg-slate-100 hover:text-slate-700"
+                        aria-label="Fermer"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M6 6l12 12M18 6L6 18"
+                            />
+                        </svg>
+                    </button>
+
                 </div>
             </div>
+
+            <!-- Montant -->
+            <p class="mt-1 text-lg font-bold tracking-tight text-emerald-600">
+                +{{ number_format((float) auth()->user()->balance, 2, ',', ' ') }} €
+            </p>
+
+            <!-- Description -->
+            <p class="mt-2 text-sm leading-5 text-slate-500">
+                {{ __('messages.transfer_received_description') }}
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const notification = document.getElementById('transfer-notification');
+        const closeButton = document.getElementById('close-transfer-notification');
+
+        if (!notification || !closeButton) {
+            return;
+        }
+
+        closeButton.addEventListener('click', function () {
+            notification.remove();
+        });
+    });
+</script>
+
+
+
 
             <!-- Balance -->
             <section class="overflow-hidden bg-slate-950 px-6 py-6 text-white shadow-lg sm:px-8 sm:py-8">
@@ -61,15 +141,13 @@
                     </button>
                 </div>
 
-                <div class="mt-6 flex items-center justify-between border-t border-slate-800 pt-4">
-                    <span class="text-sm text-slate-400">
-                        {{ __('messages.balance_evolution') }}
-                    </span>
+             
+<div class="mt-6 border-t border-slate-800 pt-4">
+    <p class="text-sm text-slate-400">
+        {{ __('messages.manage_operations_simply') }}
+    </p>
+</div>
 
-                    <span class="text-sm font-medium text-emerald-400">
-                        +125,00 €
-                    </span>
-                </div>
             </section>
 
             <!-- Quick actions -->
@@ -260,116 +338,79 @@
 
                 </section>
 
-                <!-- Transactions -->
-                <section class="min-w-0 bg-white p-6 shadow-sm lg:col-span-7">
+                    
+<!-- Transactions -->
+<section class="min-w-0 bg-white p-6 shadow-sm lg:col-span-7">
 
-                    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between">
 
-                        <div>
-                            <p class="text-xs font-medium uppercase tracking-wider text-slate-400">
-                                {{ __('messages.activity') }}
-                            </p>
+        <div>
+            <p class="text-xs font-medium uppercase tracking-wider text-slate-400">
+                {{ __('messages.activity') }}
+            </p>
 
-                            <h2 class="mt-1 text-lg font-semibold text-slate-900">
-                                {{ __('messages.recent_transactions') }}
-                            </h2>
-                        </div>
+            <h2 class="mt-1 text-lg font-semibold text-slate-900">
+                {{ __('messages.recent_transactions') }}
+            </h2>
+        </div>
 
-                        <a
-                            href="#"
-                            class="text-sm font-medium text-blue-600 hover:text-blue-700"
-                        >
-                            {{ __('messages.see_all') }}
-                        </a>
+        <a
+            href="#"
+            class="text-sm font-medium text-blue-600 hover:text-blue-700"
+        >
+            {{ __('messages.see_all') }}
+        </a>
 
-                    </div>
+    </div>
 
-                    <div class="mt-5 divide-y divide-slate-100">
+    <div class="mt-5 divide-y divide-slate-100">
 
-                        <!-- Transaction 1 -->
-                        <div class="flex items-center justify-between py-4 first:pt-0">
+        <!-- Virement reçu -->
+        <div class="flex items-center justify-between py-4 first:pt-0">
 
-                            <div class="flex min-w-0 items-center gap-3">
+            <div class="flex min-w-0 items-center gap-3">
 
-                                <div class="flex h-10 w-10 shrink-0 items-center justify-center bg-emerald-50 text-emerald-600">
-                                    ↑
-                                </div>
+                <!-- Icône -->
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                    <svg
+                        class="h-5 w-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 19V5m0 0l-5 5m5-5l5 5"
+                        />
+                    </svg>
+                </div>
 
-                                <div class="min-w-0">
-                                    <p class="truncate text-sm font-medium text-slate-900">
-                                        {{ __('messages.account_funding') }}
-                                    </p>
+                <!-- Informations -->
+                <div class="min-w-0">
+                    <p class="truncate text-sm font-medium text-slate-900">
+                        {{ __('messages.transfer_received') }}
+                    </p>
 
-                                    <p class="mt-1 text-xs text-slate-400">
-                                        {{ __('messages.today') }} · 10:42
-                                    </p>
-                                </div>
+                    <p class="mt-1 text-xs text-slate-400">
+                        {{ __('messages.received') }}
+                    </p>
+                </div>
 
-                            </div>
+            </div>
 
-                            <p class="ml-4 shrink-0 text-sm font-semibold text-emerald-600">
-                                +500,00 €
-                            </p>
+            <!-- Solde réel -->
+            <p class="ml-4 shrink-0 text-sm font-semibold text-emerald-600">
+                +{{ number_format((float) auth()->user()->balance, 2, ',', ' ') }} €
+            </p>
 
-                        </div>
+        </div>
 
-                        <!-- Transaction 2 -->
-                        <div class="flex items-center justify-between py-4">
+    </div>
 
-                            <div class="flex min-w-0 items-center gap-3">
+</section>
 
-                                <div class="flex h-10 w-10 shrink-0 items-center justify-center bg-red-50 text-red-600">
-                                    ↓
-                                </div>
-
-                                <div class="min-w-0">
-                                    <p class="truncate text-sm font-medium text-slate-900">
-                                        {{ __('messages.transfer') }}
-                                    </p>
-
-                                    <p class="mt-1 text-xs text-slate-400">
-                                        {{ __('messages.yesterday') }} · 16:20
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <p class="ml-4 shrink-0 text-sm font-semibold text-red-600">
-                                -25,00 €
-                            </p>
-
-                        </div>
-
-                        <!-- Transaction 3 -->
-                        <div class="flex items-center justify-between py-4 pb-0">
-
-                            <div class="flex min-w-0 items-center gap-3">
-
-                                <div class="flex h-10 w-10 shrink-0 items-center justify-center bg-emerald-50 text-emerald-600">
-                                    ↑
-                                </div>
-
-                                <div class="min-w-0">
-                                    <p class="truncate text-sm font-medium text-slate-900">
-                                        {{ __('messages.received_transfer') }}
-                                    </p>
-
-                                    <p class="mt-1 text-xs text-slate-400">
-                                        18 sept. · 09:15
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <p class="ml-4 shrink-0 text-sm font-semibold text-emerald-600">
-                                +50,00 €
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </section>
 
             </div>
 

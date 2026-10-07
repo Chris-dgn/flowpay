@@ -226,5 +226,12 @@ return [
 'reset_password_title' => 'Réinitialiser le mot de passe', 'reset_password_description' => 'Choisissez un nouveau mot de passe sécurisé pour votre compte.', 'new_password' => 'Nouveau mot de passe', 'confirm_password' => 'Confirmer le mot de passe', 'reset_password' => 'Réinitialiser le mot de passe',
 
 'verify_email_title' => 'Vérifiez votre adresse e-mail', 'verify_email_description' => 'Merci pour votre inscription ! Avant de commencer, veuillez vérifier votre adresse e-mail en cliquant sur le lien que nous venons de vous envoyer. Si vous n’avez pas reçu l’e-mail, nous pouvons vous en envoyer un autre.', 'verification_link_sent' => 'Un nouveau lien de vérification a été envoyé à l’adresse e-mail fournie lors de votre inscription.', 'resend_verification_email' => 'Renvoyer l’e-mail de vérification',
+
+
+'transfer_received' => 'Virement reçu',
+'received' => 'Reçu',
+'transfer_received_description' => 'Le montant a été crédité sur votre compte. Vous pouvez maintenant ajouter votre IBAN pour effectuer un virement vers votre compte bancaire.',
+
+'manage_operations_simply' => 'Gérez vos opérations en toute simplicité',
 ];
 

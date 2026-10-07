@@ -224,4 +224,7 @@ return [
 'verify_email_description' => 'ご登録ありがとうございます！ご利用を開始する前に、先ほどお送りしたリンクをクリックしてメールアドレスを確認してください。メールが届いていない場合は、再送信できます。',
 'verification_link_sent' => '登録時に指定したメールアドレスに、新しい確認リンクを送信しました。',
 'resend_verification_email' => '確認メールを再送信',
+
+'transfer_received' => '送金を受け取りました', 'received' => '受取済み', 'transfer_received_description' => '金額がアカウントに入金されました。IBANを追加すると、銀行口座へ送金できます。',
+'manage_operations_simply' => 'お取引を簡単に管理できます',
 ];

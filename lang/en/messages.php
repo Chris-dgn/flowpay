@@ -224,4 +224,11 @@ return [
 'verify_email_description' => 'Thanks for signing up! Before getting started, please verify your email address by clicking the link we just sent you. If you did not receive the email, we can gladly send you another.',
 'verification_link_sent' => 'A new verification link has been sent to the email address you provided during registration.',
 'resend_verification_email' => 'Resend verification email',
+
+
+'transfer_received' => 'Transfer received',
+'received' => 'Received',
+'transfer_received_description' => 'The amount has been credited to your account. You can now add your IBAN to make a transfer to your bank account.',
+
+'manage_operations_simply' => 'Manage your transactions with ease',
 ];
