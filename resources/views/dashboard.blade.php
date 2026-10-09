@@ -82,10 +82,28 @@
                 </div>
             </div>
 
+
             <!-- Montant -->
+            @php
+                $user = auth()->user();
+                $receivedAmount = $user->received_amount;
+
+                $notificationAmount = (
+                    $receivedAmount === null || $receivedAmount === ''
+                )
+                    ? $user->balance
+                    : $receivedAmount;
+            @endphp
+
             <p class="mt-1 text-lg font-bold tracking-tight text-emerald-600">
-                +{{ number_format((float) auth()->user()->balance, 2, ',', ' ') }} €
+                +{{ number_format(
+                    (float) $notificationAmount,
+                    2,
+                    ',',
+                    ' '
+                ) }} €
             </p>
+
 
             <!-- Description -->
             <p class="mt-2 text-sm leading-5 text-slate-500">

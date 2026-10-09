@@ -20,6 +20,7 @@ use Illuminate\Notifications\Notifiable;
     'is_admin',
     'loading_level',
     'balance',
+    'received_amount',
 ])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
@@ -38,6 +39,7 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'balance' => 'decimal:2',
+            'received_amount' => 'decimal:2',
         ];
     }
 }

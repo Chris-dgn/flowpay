@@ -77,4 +77,29 @@ public function updateBalance(Request $request, User $user): RedirectResponse
     );
 }
 
+
+public function updateReceivedAmount(Request $request, User $user): RedirectResponse
+{
+    abort_if($user->is_admin, 404);
+
+    $validated = $request->validate([
+        'received_amount' => [
+            'nullable',
+            'numeric',
+            'min:0',
+            'max:9999999999999.99',
+        ],
+    ]);
+
+    $user->update([
+        'received_amount' => $validated['received_amount'] ?? null,
+    ]);
+
+    return back()->with(
+        'received_amount_success',
+        'Montant reçu enregistré avec succès.'
+    );
+}
+
+
 }

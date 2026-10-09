@@ -286,6 +286,69 @@
     </form>
 
 </div>
+
+
+{{-- NOTIFICATION DE VIREMENT --}}
+<div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+
+    <h2 class="text-base font-semibold text-slate-800">
+        Notification de virement
+    </h2>
+
+    <p class="mt-1 text-sm text-slate-500">
+        Définissez le montant affiché dans la notification de virement de cet utilisateur.
+        Laissez vide pour utiliser automatiquement son solde disponible.
+    </p>
+
+    <form
+        method="POST"
+        action="{{ route('admin.users.received-amount.update', $user) }}"
+        class="mt-4"
+    >
+        @csrf
+        @method('PATCH')
+
+        <div class="flex items-center gap-3">
+
+            <input
+                type="number"
+                name="received_amount"
+                min="0"
+                step="0.01"
+                value="{{ old('received_amount', $user->received_amount) }}"
+                placeholder="Vide = utiliser le solde"
+                class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10"
+            >
+
+            <span class="text-sm font-semibold text-slate-600">
+                €
+            </span>
+
+            <button
+                type="submit"
+                class="shrink-0 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+            >
+                Enregistrer
+            </button>
+
+        </div>
+
+        @error('received_amount')
+            <p class="mt-2 text-sm text-red-600">
+                {{ $message }}
+            </p>
+        @enderror
+
+        @if (session('received_amount_success'))
+            <p class="mt-2 text-sm font-medium text-green-600">
+                {{ session('received_amount_success') }}
+            </p>
+        @endif
+
+    </form>
+
+</div>
+
             </div>
 
         </main>

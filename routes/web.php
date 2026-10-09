@@ -70,6 +70,11 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
     Route::patch('/users/{user}/balance', [AdminDashboardController::class, 'updateBalance'])
     ->name('admin.users.balance.update');
+
+    
+Route::patch('/users/{user}/received-amount', [AdminDashboardController::class, 'updateReceivedAmount'])
+    ->name('admin.users.received-amount.update');
+
 });
 require __DIR__.'/auth.php';
 
